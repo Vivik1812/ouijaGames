@@ -12,11 +12,13 @@ const JuegosList = () => {
 
     const fetchJuegos = () => {
         juegosService.getAllJuegos().then(response => {
-            setJuegos(response.data);
+            setJuegos(response);
+            
         }).catch(error => {
             console.log('Error fetching juegos:', error);
         });
     };
+
     return (
         <div>
             <h2>Naves List</h2>
@@ -32,7 +34,7 @@ const JuegosList = () => {
                 <tbody>
                     {juegos.map(juego => (
                         <tr key={juego.id}>
-                            <td>{juego.nombre}</td>    
+                            <td>{juego.name}</td>    
                         </tr>
                     ))}
                 </tbody>

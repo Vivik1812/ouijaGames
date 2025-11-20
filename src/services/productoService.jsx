@@ -1,12 +1,14 @@
-// src/services/FaccionesService.jsx
 import axios from 'axios';
 
-const BASE_URL = 'https://naves-back.onrender.com/api/facciones';
+const BASE_URL = 'https://ouijagames-back.onrender.com/api/products';
+
 
 class JuegosService {
     async getAllJuegos() {
         try {
             const response = await axios.get(BASE_URL);
+            console.log(response.data);
+            
             return response.data;
         } catch (error) {
             console.error('Error al obtener juegos:', error);
